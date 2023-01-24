@@ -26,7 +26,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":success-animated-content"))
+    implementation("com.github.sokchanbo:success-animated-content:1.0.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material)
