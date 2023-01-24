@@ -4,6 +4,8 @@ import com.chanbo.successanimatedcontent.Configuration
 
 plugins {
     id("successanimtedcontent.library.compose")
+
+    `maven-publish`
 }
 
 android {
@@ -42,4 +44,19 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.chanbo.successanimatedcontent"
+            artifactId = "success-animated-content"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
